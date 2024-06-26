@@ -31,11 +31,15 @@ public class MovieInsertController {
 	@RequestMapping(value = command, method = RequestMethod.POST)
 	public ModelAndView insert(@ModelAttribute("movie") @Valid MovieBean movie, BindingResult result ) {
 		ModelAndView mav = new ModelAndView();
+		// kim ÆÀ¿ø »èÁ¦
 		if(result.hasErrors()) {
 			mav.setViewName(getPage);
 			return mav;
 		}
 		int cnt = -1;
+		// kim ÆÀ¿ø Ãß°¡
+		// kim ÆÀ¿ø Ãß°¡
+		// kim ÆÀ¿ø Ãß°¡
 		cnt = movieDao.insertMovie(movie);
 		if(cnt!=-1) {
 			mav.setViewName(gotoPage);
